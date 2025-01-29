@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confession Page</title>
+    <link rel="stylesheet" href="project2.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>CONFESSION PAGE</h1>
+    <form id="confessionForm">
+        <label for="username">Your Name:</label>
+        <input type="text" id="username" name="username" required> 
+
+        <label for="confession">Confession:</label>
+        <textarea id="confession" name="confession" rows="4" required></textarea>
+
+        <button type="button" onclick="submitConfession()">Submit Confession</button>
+    </form>
+
+    <div id="confessionList">
+        <!-- Confessions will be displayed here -->
+    </div>
+</div>
+
+<script src="project2.js"></script>
+</body>
+</html>

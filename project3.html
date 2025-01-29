@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="project.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="login-container">
+
+        <form id="loginForm" onsubmit="validateForm(); return false;">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName">
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required>
+
+
+        <label for="email">Email:</label>
+        <input type="text" id="email">
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile">
+
+        
+        <button type="submit">Signup</button>
+        
+
+        </form>
+        <script>
+            function validateForm() {
+            const usernamePattern = /^[a-zA-Z][a-zA-Z. ]{2,29}$/;
+            const passwordPattern = /^\d[!@#$%^&*][a-zA-Z\d!@#$%^&*]{7,19}$/;
+            const emailPattern = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+\.[a-zA-z]{2,3}$/;
+            const mobilePattern = /^\d{10}$/;
+            const panPattern = /^[a-zA-Z]{5}\d{4}[a-zA-Z]$/;
+
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const address = document.getElementById('address').value;
+                const email = document.getElementById('email').value;
+                const mobile = document.getElementById('mobile').value;
+                const pan = document.getElementById('pan').value;
+    
+                if (!usernamePattern.test(username)) {
+                    alert('Invalid username. Please follow the specified pattern.');
+                    return;
+                }
+    
+                if (!passwordPattern.test(password)) {
+                    alert('Invalid password. Please follow the specified pattern.');
+                    return;
+                }
+    
+                if (!emailPattern.test(email)) {
+                    alert('Invalid email address. Please follow the specified pattern.');
+                    return;
+                }
+    
+                if (!mobilePattern.test(mobile)) {
+                    alert('Invalid mobile number. Please enter 10 digits only.');
+                    return;
+                }
+    
+                if (!panPattern.test(pan)) {
+                    alert('Invalid PAN card. Please follow the specified pattern.');
+                    return;
+                }
+    
+                if (lastName.trim() === '') {
+                    alert('Last Name should not be empty.');
+                    return;
+                }
+    
+                if (address.trim() === '') {
+                    alert('Address should not be empty.');
+                    return;
+                }
+                alert('Form submitted successfully!');
+            }
+        </script>
+    
+    </div>
+</body>
+</html>
